@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+</head>
+<body>
+<div align="center">
+    <h1>User Registration</h1>
+    
+    <form th:action="@{/unlock}" method="post" th:object="${lock}">
+    
+    <p>your email : <p style="color:red" th:text="${lock.email}"/></p>
+    
+        <label>Temporary Password :</label>
+        <input type="text" th:field="*{tempPwd}" /><br/>
+ 
+        <label>New Password :</label>
+        <input type="text" th:field="*{newPwd}" /><br/>
+ 
+        <label>Confirm Password :</label>
+        <input type="password" th:field="*{confirmPwd}" /><br/>
+ 
+        <button type="submit">Register</button>    
+    </form>
+    <br/><br/>
+	<label>Already Unlocked? </label>&nbsp;&nbsp;<a href="login">Login</a>
+</div>
+</body>
+</html>
